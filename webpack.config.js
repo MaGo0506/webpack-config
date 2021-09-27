@@ -1,5 +1,11 @@
+let mode = 'development'
+
+if (process.env.NODE_ENV === 'production') {
+    mode = 'production';
+}
+
 module.exports = {
-    mode: "development",
+    mode: mode,
 
     module: {
         rules: [
@@ -13,8 +19,8 @@ module.exports = {
         ]
     },
 
-    devtool: false,
+    devtool: 'source-map',
     devServer: {
-        static: "./dist",
+        static: './dist',
     },
 };
